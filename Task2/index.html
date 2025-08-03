@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLife - Organic Products</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #45a049;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        /* Products Section */
+        .products {
+            text-align: center;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .customer-name {
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(76, 175, 80, 0.9), rgba(76, 175, 80, 0.9)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta h2 {
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">GreenLife</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Organic Products for a Healthier Life</h1>
+                <p>Discover our premium selection of organic foods and natural products that nourish your body and soul.</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>100% Organic</h3>
+                    <p>All our products are certified organic, free from harmful chemicals and pesticides.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered to your doorstep within 24-48 hours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>We source only the highest quality products from trusted farmers and producers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Organic Vegetables" class="product-img">
+                    <div class="product-info">
+                        <h3>Organic Vegetables</h3>
+                        <p>Fresh from local farms</p>
+                        <div class="price">$5.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="Organic Fruits" class="product-img">
+                    <div class="product-info">
+                        <h3>Organic Fruits</h3>
+                        <p>Seasonal and delicious</p>
+                        <div class="price">$7.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266" alt="Organic Honey" class="product-img">
+                    <div class="product-info">
+                        <h3>Organic Honey</h3>
+                        <p>Pure and natural</p>
+                        <div class="price">$12.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831" alt="Organic Tea" class="product-img">
+                    <div class="product-info">
+                        <h3>Organic Tea</h3>
+                        <p>Herbal and refreshing</p>
+                        <div class="price">$8.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The quality of their organic vegetables is unmatched. I've been a customer for 3 years and never been disappointed!"</p>
+                    <p class="customer-name">- Sarah Johnson</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Fast delivery and excellent customer service. Their products have helped me maintain a healthier lifestyle."</p>
+                    <p class="customer-name">- Michael Chen</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I love that I can trust GreenLife for truly organic products. Their transparency is refreshing in today's market."</p>
+                    <p class="customer-name">- Emily Rodriguez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Organic Journey?</h2>
+            <p>Join thousands of happy customers enjoying healthier lives with our products.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GreenLife</h3>
+                    <p>Providing high-quality organic products since 2015. Our mission is to make healthy living accessible to everyone.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Organic St, Green City</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@greenlife.com</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 GreenLife Organic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
