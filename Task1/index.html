@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kundan Kumar | Portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/0ede200358.js"
+      crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <h2 class="logo">KUNDAN KUMAR</h2>
+        <ul class="list">
+          <li  href="/" class="list-items">Home</li>
+          <li href="#about" class="list-items">About</li>
+          <li href="#service" class="list-items">Services</li>
+          <li href="#projects" class="list-items">Projects</li>
+          <li href="#contact" class="list-items">Contact</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="intro">
+        <h1>Hi I am <br />Kundan Kumar</h1>
+        <p>Java Full Stack Developer</p>
+        <div class="links">
+          <a href="./Kundan_Resume.docx" download class="cv">Download CV</a>
+          <a href="#about" style="background-color: green">Learn more</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="./kkImage.jpeg" alt="Kundan Kumar" />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <h2 class="title">About</h2>
+      <p class="para">
+        Enthusiastic and detail-oriented Java Developer with hands-on experience in developing robust web applications. Proficient in Java, SQL, HTML, CSS, JavaScript, React, Spring Boot, Hibernate, JDBC, Servlets, and Node.js. Able to design, develop, and maintain scalable applications while adhering to coding standards and best practices. Proven ability to collaborate with cross-functional teams to analyze requirements and deliver high-quality solutions within project deadlines. Seeking to leverage technical skills and academic background in a dynamic development environment.
+      </p>
+      <div class="socails">
+        <div class="card">
+          <div class="circ"><div></div></div>
+          <p>Full Name</p>
+          <p>Kundan Kumar</p>
+        </div>
+        <div class="card" >
+          <div class="circ" ><div></div></div>
+          <p>Email</p>
+          <a style="margin-left: -13px;"   href="mailto:kundankr73017@gmail.com">kundankr73017@gmail.com</a>
+        </div>
+        <div class="card">
+          <div class="circ"><div></div></div>
+          <p>LinkedIn</p>
+          <a href="https://linkedin.com/in/kundan-kumar73" target="_blank"
+            >kundan kumar</a
+          >
+        </div>
+        <div class="card">
+          <div class="circ"><div></div></div>
+          <p>Phone</p>
+          <p>+91 7301767993</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <h2 class="title">What I Do</h2>
+      <div class="wcards">
+        <div class="card">
+          <div class="icon"><i class="fas fa-laptop-code"></i></div>
+          Full Stack Development
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-brands fa-uncharted"></i></div>
+          Software Development
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fa-brands fa-dev"></i></div>
+          Web Development
+        </div>
+      </div><br><br>
+
+      <h2 class="title">My Skills</h2>
+      <div class="skillcard">
+        <div class="card"><div class="name">Java</div></div>
+        <div class="card"><div class="name">HTML</div></div>
+        <div class="card"><div class="name">CSS</div></div>
+        <div class="card"><div class="name">JavaScript</div></div>
+        <div class="card"><div class="name">React.js</div></div>
+        <div class="card"><div class="name">MySQL</div></div>
+        <div class="card"><div class="name">JDBC</div></div>
+        <div class="card"><div class="name">Servlet</div></div>
+        <div class="card"><div class="name">Spring Boot</div></div>
+        <div class="card"><div class="name">Hibernate</div></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+      <h2 class="title">My Projects</h2>
+      <div class="project-cards">
+        <div class="project-card">
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-desc">A fully responsive personal portfolio website designed using HTML, CSS, and JavaScript  It showcases my bio, technical skills, academic and personal projects,</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+       <div class="project-card">
+  <h3 class="project-title">Student Management System Using QR Code</h3>
+  <p class="project-desc">
+    A web-based system that allows QR-code-based student attendance tracking, built using Java, html, and Css, Mysql.
+  </p>
+  <a href="#" class="project-link">View Project</a>
+</div>
+<div class="project-card">
+  <h3 class="project-title">Voice Gender Detection System</h3>
+  <p class="project-desc">
+    A machine learning project that detects gender from human voice using Python, Librosa, and a trained deep learning model.
+  </p>
+  <a href="#" class="project-link">View Project</a>
+</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="forms" id="contact">
+      <h2 class="title">Get in Touch</h2>
+      <form form id="contactForm" class="contact-form">
+        <input type="text" placeholder="First name" required />
+        <input type="text" placeholder="Last name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="tel" placeholder="Phone number" required />
+        <textarea placeholder="Message" rows="5"></textarea>
+        <!-- <div class="cv" onclick="Kundan()">Submit Now</div> -->
+          <button  class="cv" type="submit"  onclick="Kundan()" >Send Message</button>
+          <div id="form-message"></div>
+      </form>
+    </section>
+
+    <footer>&copy; 2025 Kundan Kumar</footer>
+
+    <script src="./scriptt.js"></script>
+  </body>
+</html>
